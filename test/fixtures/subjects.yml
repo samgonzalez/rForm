@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subjectNumber: MyString
+  age: MyString
+
+two:
+  subjectNumber: MyString
+  age: MyString

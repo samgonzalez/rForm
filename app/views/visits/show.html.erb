@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dov:</strong>
+  <%= @visit.dov %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @visit.subject_id %>
+</p>
+
+
+<h2>Comments</h2>
+
+<% @visit.comments.each do |comment|  %>
+
+    <p>
+      <strong>Commenter</strong>
+      <%= comment.commenter %>
+    </p>
+
+    <p>
+      <strong>Comment</strong>
+      <%= comment.body %>
+    </p>
+<% end %>
+
+<h2>Add a Comment:</h2>
+
+<%= form_for([@visit, @visit.comments.build]) do |f| %>
+    <p>
+      <%= f.label :commenter %>
+      <%= f.text_field :commenter %>
+    <p>
+
+    <p>
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_visit_path(@visit) %> |
+<%= link_to 'Back', visits_path %>
